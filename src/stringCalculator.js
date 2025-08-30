@@ -13,9 +13,11 @@ function stringCalculator(input) {
     if (match) {
       delimiters = match[1];
       if (delimiters.startsWith("[") && delimiters.endsWith("]")) {
-        delimiters = delimiters.slice(1, -1);
+        delimiters = [...delimiters.matchAll(/\[([^\]]+)\]/g)]
+          .map((m) => escapeRegExp(m[1]))
+          .join("|");
       }
-      delimiters = new RegExp(escapeRegExp(delimiters));
+      delimiters = new RegExp(delimiters);
       numbersString = match[2];
     }
   }
