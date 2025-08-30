@@ -23,7 +23,7 @@ function stringCalculator(input) {
     throw new Error(`Negatives not allowed: ${negatives.join(", ")}`);
   }
 
-  return numbers.reduce((acc, curr) => acc + curr, 0);
+  return numbers.reduce((acc, curr) => (curr <= 1000 ? acc + curr : acc), 0);
 }
 
 module.exports = stringCalculator;
