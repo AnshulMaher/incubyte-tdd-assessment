@@ -9,9 +9,13 @@ function stringCalculator(input) {
   let numbersString = input;
 
   if (input.startsWith("//")) {
-    const match = input.match(/^\/\/(.)\n(.*)/);
+    const match = input.match(/^\/\/(.*?)\n(.*)/s);
     if (match) {
-      delimiters = new RegExp(escapeRegExp(match[1]));
+      delimiters = match[1];
+      if (delimiters.startsWith("[") && delimiters.endsWith("]")) {
+        delimiters = delimiters.slice(1, -1);
+      }
+      delimiters = new RegExp(escapeRegExp(delimiters));
       numbersString = match[2];
     }
   }
