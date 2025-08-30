@@ -26,7 +26,7 @@ describe("StringCalculator", () => {
   });
 
   test("throws error listing negative numbers", () => {
-    expect(stringCalculator("1,-2,3,-4")).toThrow(
+    expect(() => stringCalculator("1,-2,3,-4")).toThrow(
       "Negatives not allowed: -2, -4"
     );
   });

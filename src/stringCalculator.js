@@ -17,6 +17,12 @@ function stringCalculator(input) {
   }
 
   const numbers = numbersString.split(delimiters).map(Number);
+
+  const negatives = numbers.filter((n) => n < 0);
+  if (negatives.length > 0) {
+    throw new Error(`Negatives not allowed: ${negatives.join(", ")}`);
+  }
+
   return numbers.reduce((acc, curr) => acc + curr, 0);
 }
 
