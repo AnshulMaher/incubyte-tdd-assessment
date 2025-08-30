@@ -1,0 +1,29 @@
+# Node modules folder
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for coverage reports
+coverage/
+
+# Optional npm cache directory
+.npm
+
+# dotenv environment variables file
+.env
+
+# Jest cache folder
+jest-cache/
+
+# OS generated files
+.DS_Store
+Thumbs.db
