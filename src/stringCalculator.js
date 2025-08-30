@@ -1,7 +1,7 @@
 function stringCalculator(input) {
   if (input === "") return 0;
 
-  const numbers = input.split(",").map(Number);
+  const numbers = input.split(/,|\n/).map(Number);
   return numbers.reduce((acc, curr) => acc + curr, 0);
 }
 
