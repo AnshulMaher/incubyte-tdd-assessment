@@ -20,4 +20,8 @@ describe("StringCalculator", () => {
   test("supports new lines as separators", () => {
     expect(stringCalculator("1\n2,3")).toBe(6);
   });
+
+  test("supports custom delimiter syntax", () => {
+    expect(stringCalculator("//;\n1;2")).toBe(3);
+  });
 });
